@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://www.tutorialdost.com/Cpp-Programming-Tutorial/34-CPP-Class-Array.aspx -->
+<html lang="en-US" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>C++ Array of Objects</title>
+    <meta name="keywords" content="C++ Array of Objects, Array of Object in C++, C++ Array of Objects with Example, Example of Array of Object in C++">
+	<meta name="description" content="An object is a variable of class type. As we know, an array is a collection of similar type, threrfore an array can be a collection of class type.">
+    <meta name="author" content="templatemo">
+    <!--
+	
+	
+    -->
+
+	<!-- Google Fonts -->
+	<link href="./C++ Array of Objects_files/css" rel="stylesheet">
+	<link href="./C++ Array of Objects_files/css(1)" rel="stylesheet">
+	<link href="./C++ Array of Objects_files/css(2)" rel="stylesheet" type="text/css">
+
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./C++ Array of Objects_files/bootstrap.css">
+	<link rel="stylesheet" href="./C++ Array of Objects_files/misc.css">
+	<link rel="stylesheet" href="./C++ Array of Objects_files/red-scheme.css">
+
+	<!-- JavaScripts -->
+	<script src="./C++ Array of Objects_files/jquery-1.10.2.min.js.download"></script>
+	<script src="./C++ Array of Objects_files/jquery-migrate-1.2.1.min.js.download"></script>
+
+	<link rel="shortcut icon" href="http://www.tutorialdost.com/images/favicon.ico" type="image/x-icon">
+
+<style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
+<body style="">
+
+
+	<div class="responsive_menu" style="display: none;">
+        <ul class="main_menu">
+								<li class="active"><a href="http://www.tutorialdost.com/index.html">Home</a></li>
+					            <li><a href="http://www.tutorialdost.com/About-Us.aspx">About Us</a></li>
+					            <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/34-CPP-Class-Array.aspx#">Tutorials</a>
+					            	<ul>
+					            		<li><a href="http://www.tutorialdost.com/C-Programming-Tutorial/C-Tutorial.aspx">C Programming</a></li>
+					            		<li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/01-Cpp-Programming-Tutorial-Introduction.aspx">C++ Tutorials</a></li>
+					            		<li><a href="http://www.tutorialdost.com/Java-Programming-Tutorial/01-Java-Programming-Tutorial-Introduction.aspx">Core Java</a></li>
+					            		<li><a href="http://www.tutorialdost.com/VB-Net-Programming-Tutorial/01-VB-Net-Programming-Tutorial-Introduction.aspx">VB.NET</a></li>
+					            		<li><a href="http://www.tutorialdost.com/C-Sharp-Net-Programming-Tutorial/01-C-Sharp-Net-Programming-Tutorial-Introduction.aspx">C#.NET</a></li>
+					            		<li><a href="http://www.tutorialdost.com/ASP-Net-Programming-Tutorial/ASP-Net-Programming-Tutorial-Introduction.aspx">ASP.NET</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="http://www.tutorialdost.com/Blog.aspx">Blog</a></li>
+					            <li><a href="http://www.tutorialdost.com/Author.aspx">Author</a></li>
+					            <li><a href="http://www.tutorialdost.com/Feedback.aspx">Feedback</a></li>
+					            <li><a href="http://www.tutorialdost.com/Contact-Us.aspx">Contact</a></li>
+        </ul> <!-- /.main_menu -->
+    </div> <!-- /.responsive_menu -->
+
+	<header class="site-header clearfix site-header-shrink">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<div class="pull-left logo">
+						<a href="http://www.tutorialdost.com/index.html">
+							<img src="./C++ Array of Objects_files/logo.png" width="250px" alt="Medigo by templatemo"></a>
+					</div>	<!-- /.logo -->
+
+					<div class="main-navigation pull-right">
+
+						<nav class="main-nav visible-md visible-lg">
+							<ul class="sf-menu sf-js-enabled sf-arrows">
+								<li class="active"><a href="http://www.tutorialdost.com/index.html">Home</a></li>
+					            <li><a href="http://www.tutorialdost.com/About-Us.aspx">About Us</a></li>
+					            <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/34-CPP-Class-Array.aspx#" class="sf-with-ul">Tutorials<i class="fa fa-angle-down"></i></a>
+					            	<ul style="display: none;">
+					            		<li><a href="http://www.tutorialdost.com/C-Programming-Tutorial/C-Tutorial.aspx">C Programming</a></li>
+					            		<li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/01-Cpp-Programming-Tutorial-Introduction.aspx">C++ Tutorials</a></li>
+					            		<li><a href="http://www.tutorialdost.com/Java-Programming-Tutorial/01-Java-Programming-Tutorial-Introduction.aspx">Core Java</a></li>
+					            		<li><a href="http://www.tutorialdost.com/VB-Net-Programming-Tutorial/01-VB-Net-Programming-Tutorial-Introduction.aspx">VB.NET</a></li>
+					            		<li><a href="http://www.tutorialdost.com/C-Sharp-Net-Programming-Tutorial/01-C-Sharp-Net-Programming-Tutorial-Introduction.aspx">C#.NET</a></li>
+					            		<li><a href="http://www.tutorialdost.com/ASP-Net-Programming-Tutorial/ASP-Net-Programming-Tutorial-Introduction.aspx">ASP.NET</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="http://www.tutorialdost.com/Blog.aspx">Blog</a></li>
+					            <li><a href="http://www.tutorialdost.com/Author.aspx">Author</a></li>
+					            <li><a href="http://www.tutorialdost.com/Feedback.aspx">Feedback</a></li>
+					            <li><a href="http://www.tutorialdost.com/Contact-Us.aspx">Contact</a></li>
+							</ul> <!-- /.sf-menu -->
+						</nav> <!-- /.main-nav -->
+
+						<!-- This one in here is responsive menu for tablet and mobiles -->
+					    <div class="responsive-navigation visible-sm visible-xs">
+					        <a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/34-CPP-Class-Array.aspx#nogo" class="menu-toggle-btn">
+					            <i class="fa fa-bars"></i>
+					        </a>
+					    </div> <!-- /responsive_navigation -->
+
+					</div> <!-- /.main-navigation -->
+
+				</div> <!-- /.col-md-12 -->
+
+			</div> <!-- /.row -->
+
+		</div> <!-- /.container -->
+	</header> <!-- /.site-header -->
+
+
+
+
+	<div class="first-widget parallax" id="blog">
+		<div class="parallax-overlay">
+			<div class="container pageTitle" style="background-position: 50% -11px;">
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<h1 class="page-title">Array of Object in C++</h1>
+
+					</div> <!-- /.col-md-6 -->
+					<div class="col-md-6 col-sm-6 text-right">
+						<a href="http://www.tutorialdost.com/ShowProgram.aspx" class="large-button white-color">Programs<!--<i class="icon-button fa fa-download"></i>--></a>
+					</div> <!-- /.col-md-6 -->
+				</div> <!-- /.row -->
+			</div> <!-- /.container -->
+		</div> <!-- /.parallax-overlay -->
+	</div> <!-- /.pageTitle -->
+
+    <!--------------------------Content------------------------------------->
+
+	<div class="container">
+		<div class="row">
+
+
+        			<div class="col-md-04">
+
+						<a id="toggle" href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/34-CPP-Class-Array.aspx#"><i class="fa fa-bars"></i></a>
+						<div id="overlay"></div>
+						<nav id="menu">
+
+						<h5 class="widget-title1">Learn C++ Programming</h5>
+
+						  <ul>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/01-Cpp-Programming-Tutorial-Introduction.aspx"> C++ Introduction </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/02-Cpp-Procedure-Oriented-Programming.aspx">Procedure Oriented Programming. </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/03-CPP-oops-Object-Oriented-Programming.aspx">Object Oriented Pro. </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/04-CPP-Benefits-of-OOP.aspx">Benefits of OOP's </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/05-CPP-Object-Oriented-vs-Procedure-Oriented-Programming.aspx">POP vs OOP </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/06-Difference-between-CPP-and-C.aspx"> C vs C++ </a></li>
+
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/07-Cpp-Character-Set.aspx"> C++ Character Set </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/08-Cpp-Tokens.aspx"> C++ Tokens </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/09-Cpp-Keywords.aspx"> C++ Keywords </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/10-Cpp-Identifiers.aspx"> C++ Identifiers </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/11-Cpp-Data-Types.aspx"> C++ Data Types </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/12-Cpp-Variables.aspx"> C++ Variables </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/13-Cpp-Operators.aspx"> C++ Operators </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/14-Cpp-If-Else.aspx"> C++ Flow Control </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/15-Cpp-Loops.aspx"> C++ Loops </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/16-Cpp-Jump-Statements.aspx"> C++ Jump Statements </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/17-Cpp-Functions.aspx"> C++ Function </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/18-Cpp-Storage-Classes.aspx"> C++ Storage Classes </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/19-Cpp-Recursion.aspx"> C++ Recursion </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/20-Cpp-Array.aspx"> C++ Array </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/21-Cpp-Pointers.aspx"> C++ Pointers </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/22-Cpp-Pointer-Array.aspx"> C++ Pointer &amp; Array </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/23-Cpp-Pointer-Function.aspx"> C++ Pointer &amp; Function </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/24-Cpp-String.aspx"> C++ String </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/25-Cpp-Structure.aspx"> C++ Structure </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/26-Cpp-Structure-Function.aspx"> C++ Structure &amp; Function </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/27-Cpp-Structure-Array.aspx"> C++ Structure &amp; Array </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/28-Cpp-Nested-Structure.aspx"> C++ Nested Structure </a></li>
+
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/30-Cpp-Union.aspx"> C++ Union </a></li>
+
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/32-Cpp-Perprocessors.aspx"> C++ Preprocessor </a></li>
+
+
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/33-CPP-Classes-Object.aspx"> C++ Classes and Object </a></li>
+                                    <li><a class="active" href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/34-Cpp-Class-Array.aspx"> C++ Array of Object/Class </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/35-CPP-Function-Overloading.aspx"> C++ Function Overloading </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/36-CPP-Constructor-Destructor.aspx"> C++ Constructor Destructor</a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/37-CPP-Constructor-Overloading.aspx"> C++ Constructor Overloading </a></li>
+
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/39-CPP-Friend-Function.aspx"> C++ Friend Function </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/40-CPP-Friend-Class.aspx"> C++ Friend Class </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/41-CPP-Inline-Function.aspx"> C++ Inline Function </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/42-CPP-Passing-Returning-Object.aspx"> C++ Passing and Returning Obj. </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/43-CPP-Operator-Overloading.aspx"> C++ Operator Overloading </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/44-CPP-Dynamic-Memory-Allocation-new-delete.aspx"> C++ Dynamic Memory Allocation </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/45-CPP-Default-Parameter-Value.aspx"> C++ Default Parameter Value </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/46-CPP-This-Pointer.aspx"> C++ This Pointer </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/47-CPP-Inheritance.aspx"> C++ Inheritance </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/48-CPP-Public-Private-Protected-Access-Modifiers.aspx"> C++ Access Specifiers </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/49-CPP-Types-of-Inheritance.aspx"> C++ Types of Inheritance </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/50-CPP-Multipath-Inheritance-Ambiguity.aspx"> C++ Multipath Inheritance</a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/51-CPP-Virtual-Base-Class.aspx"> C++ Virtual Base Class </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/52-CPP-Function-Overriding.aspx"> C++ Function Overriding </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/53-CPP-Virtual-Function.aspx"> C++ Virtual Function </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/54-CPP-Pure-Virtual-Function.aspx"> C++ Pure Virtual Function </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/55-CPP-Abstract-Class.aspx"> C++ Abstract Class </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/56-CPP-Polymorphism-Static-Dynamic.aspx"> C++ Polymorphism </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/57-CPP-File-Handling.aspx"> C++ File IO </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/58-CPP-Exception-Handling-Try-Catch.aspx"> C++ Exception Handling </a></li>
+                                    <li><a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/59-CPP-Template.aspx"> C++ Template </a></li>
+							  </ul>
+							</nav>
+
+			</div> <!-- /.col-md-4 -->
+
+
+
+			<div class="col-md-08">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="archive-wrapper">
+
+
+			             <p class="Advt">Advertisements</p>
+							<div class="BannerAd">
+								
+<!-- Responsive_Banner -->
+
+							</div>
+
+
+
+                     <div class="heading-background"><h2 class="archive-title-h2">C++ Array of Objects</h2></div>
+
+					<p>An object of class represents a single record in memory,
+					if we want more than one record of class type, we have to create an
+					array of class or object. As we know, an array is a collection of similar
+					type, therefore an array can be a collection of class type.</p>
+
+							<h3 class="archive-title-h3">Syntax for Array of object</h3>
+
+				<pre>
+              class class-name
+              {
+                     datatype var1;
+                     datatype var2;
+                     - - - - - - - - - -
+                     datatype varN;
+
+                     method1();
+                     method2();
+                     - - - - - - - - - -
+                     methodN();
+              };
+
+              class-name obj[ size ];
+
+</pre>
+
+							<h3 class="archive-title-h3">Example for Array of object</h3>
+
+				<pre>
+       #include&lt;iostream.h&gt;
+       #include&lt;conio.h&gt;
+
+       class Employee
+       {
+              int Id;
+              char Name[25];
+              int Age;
+              long Salary;
+
+              public:
+              void GetData()           //Statement 1 : Defining GetData()
+              {
+                    cout&lt;&lt;"\n\tEnter Employee Id : ";
+                    cin&gt;&gt;Id;
+
+                    cout&lt;&lt;"\n\tEnter Employee Name : ";
+                    cin&gt;&gt;Name;
+
+                    cout&lt;&lt;"\n\tEnter Employee Age : ";
+                    cin&gt;&gt;Age;
+
+                    cout&lt;&lt;"\n\tEnter Employee Salary : ";
+                    cin&gt;&gt;Salary;
+              }
+
+              void PutData()           //Statement 2 : Defining PutData()
+              {
+                    cout&lt;&lt;"\n"&lt;&lt;Id&lt;&lt;"\t"&lt;&lt;Name&lt;&lt;"\t"&lt;&lt;Age&lt;&lt;"\t"&lt;&lt;Salary;
+              }
+
+       };
+
+
+       void main()
+       {
+
+              int i;
+
+              Employee E[3];           //Statement 3 : Creating Array of 3 Employees
+
+              for(i=0;i&lt;3;i++)
+              {
+                    cout&lt;&lt;"\nEnter details of "&lt;&lt;i+1&lt;&lt;" Employee";
+                    E[i].GetData();
+              }
+
+              cout&lt;&lt;"\nDetails of Employees";
+              for(i=0;i&lt;3;i++)
+              E[i].PutData();
+
+       }
+
+
+   Output :
+
+              Enter details of 1 Employee
+                        Enter Employee Id : 101
+                        Enter Employee Name : Suresh
+                        Enter Employee Age : 29
+                        Enter Employee Salary : 45000
+
+              Enter details of 2 Employee
+                        Enter Employee Id : 102
+                        Enter Employee Name : Mukesh
+                        Enter Employee Age : 31
+                        Enter Employee Salary : 51000
+
+              Enter details of 3 Employee
+                        Enter Employee Id : 103
+                        Enter Employee Name : Ramesh
+                        Enter Employee Age : 28
+                        Enter Employee Salary : 47000
+
+              Details of Employees
+                        101       Suresh      29      45000
+                        102       Mukesh      31      51000
+                        103       Ramesh      28      47000
+
+				</pre>
+
+       <p>In the above example, we are getting and displaying the data of 3 employee using array of object.
+       Statement 1 is creating an array of Employee Emp to store the records of 3 employees.</p>
+
+			
+			<div class="FooterAd">
+				<p class="Advt">Advertisement</p>
+					
+<!-- Responsive_Banner -->
+
+				<hr>
+			</div>
+
+<!--FaceBook-->
+
+						</div>
+					</div> <!-- /.col-md-12 -->
+				</div> <!-- /.row -->
+			</div> <!-- /.col-md-8 -->
+
+
+              <div class="col-md-004">
+				<div class="sidebar">
+                    <div class="sidebar-widget">
+                                <h5 class="widget-title">Follow us</h5>
+                                            <div style="margin-top:-15px;margin-bottom:15px;text-align:center;">
+							                           <a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/C-Programming-Introduction.aspx" class="social-network-icons"><i class="fa fa-facebook-square fa-2x"></i></a>
+							                           <a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/C-Programming-Introduction.aspx" class="social-network-icons"><i class="fa fa-google-plus-square fa-2x"></i></a>
+							                           <a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/C-Programming-Introduction.aspx" class="social-network-icons"><i class="fa fa-twitter-square fa-2x"></i></a>
+							                           <a href="http://www.tutorialdost.com/Cpp-Programming-Tutorial/C-Programming-Introduction.aspx" class="social-network-icons"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                                            </div>
+                       </div> <!-- /.sidebar-widget -->
+
+					<div class="sidebar-widget">
+
+						<p class="Advt">Advertisements</p>
+
+						<div style="margin-bottom:20px;">
+<!-- 300X200 -->
+</div>
+						<div style="margin-bottom:20px;">
+<!-- 300X600 -->
+</div>
+
+
+					</div> <!-- /.sidebar-widget -->
+
+									<!--Add-sidebar-widget-->
+
+
+				</div> <!-- /.sidebar -->
+			</div> <!-- /.col-md-4 -->
+
+
+
+		</div> <!-- /.row -->
+	</div> <!-- /.container -->
+
+
+
+	<div class="container">
+
+	</div> <!-- /.container -->
+
+    	<!--<h2 class="section-title">Recent from our blog</h2>-->
+
+
+    <!--------------------------------------------------------------------------------------------------------------------
+    Archi-Staff-Blog
+    -------------------------------------------------------------------------------------------------------------------->
+
+    <footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<nav class="footer-nav clearfix">
+
+				<h3>Site Map</h3>
+                        <a>Learn C++ Programming</a><br>
+                        <a>Learn C++ Programming</a><br>
+                        <a>Learn Core Java</a><br>
+                        <a>Learn VB.NET</a><br>
+                        <a>Learn C Sharp.net</a>
+
+					</nav> <!-- /.footer-nav -->
+				</div> <!-- /.col-md-12 -->
+
+				<div class="col-md-4">
+					<nav class="footer-nav clearfix">
+				<h3>Examples</h3>
+                            <a>C Examples</a><br>
+                            <a>C++  Examples</a><br>
+                            <a>Core Java  Examples</a><br>
+                            <a>Visual Basic.NET  Examples</a><br>
+                            <a>C Sharp.net  Examples</a>
+					</nav> <!-- /.footer-nav -->
+				</div> <!-- /.col-md-12 -->
+
+				<div class="col-md-4">
+					<nav class="footer-nav clearfix">
+                            <h3>About Us</h3>
+                            <p style="text-align: justify;color: #444444;">This website is designed for readers who have less or no programming experience. Even the experienced programmers will find this website equally useful. We have covered all the basic of C, C++, C#, JAVA, VB.NET, ASP.NET, etc..., programming language with easy examples and their descriptions.</p>
+					</nav> <!-- /.footer-nav -->
+				</div> <!-- /.col-md-12 -->
+
+
+			</div> <!-- /.row -->
+			<div class="row">
+				<div class="col-md-12">
+					<p class="copyright-text">Copyright © 2084 Company Name</p>
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+	</footer> <!-- /.site-footer -->
+
+	<!-- Scripts -->
+	<script src="./C++ Array of Objects_files/plugins.min.js.download"></script>
+	<script src="./C++ Array of Objects_files/medigo-custom.min.js.download"></script>
+
+
+<script src="./C++ Array of Objects_files/jquery-1.11.3.min.js.download"></script>
+<script>
+(function($){
+  var ico = $('<i class="fa fa-caret-right"></i>');
+  $('nav#menu li:has(ul) > a').append(ico);
+
+  $('nav#menu li:has(ul)').on('click',function(){
+    $(this).toggleClass('open');
+  });
+
+  $('a#toggle').on('click',function(e){
+    $('html').toggleClass('open-menu');
+    return false;
+  });
+
+
+  $('div#overlay').on('click',function(){
+    $('html').removeClass('open-menu');
+  })
+
+})(jQuery)
+</script>
+
+
+<!-- GoogleAnalytics -->
+
+
+
+</body></html>

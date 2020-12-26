@@ -1,0 +1,29 @@
+l=[]
+t=int(input())
+while(t!=0):
+    q=input()
+    if(q[0:6]=="insert"):
+        a=int(q[7])
+        b=int(q[9:11])
+        l.insert(a,b)
+        t=t-1
+    elif(q=="print"):
+        print(l)
+        t=t-1
+    elif(q[0:6]=="remove"):
+        w=int(q[7:11])
+        l.remove(w)
+        t=t-1
+    elif(q=="pop"):
+        l.pop()
+        t=t-1
+    elif(q[0:6]=="append"):
+        e=int(q[7:11])
+        l.append(e)
+        t=t-1
+    elif(q=="sort"):
+        l.sort()
+        t=t-1
+    elif(q=="reverse"):
+        l.reverse()
+        t=t-1
